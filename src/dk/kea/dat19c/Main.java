@@ -6,7 +6,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-	    /*
+
 	    // først en maskine
 
         Machine m = new Machine();
@@ -19,13 +19,14 @@ public class Main {
         System.out.println(m);
         m.turnOn();
         System.out.println(m);
+        ((Radio) m).news();
 
         // så en dvd-spiller
         m = new DVD();
         System.out.println(m);
         m.turnOn();
         System.out.println(m);
-        */
+
 
         //opret arraylist med apparater
         List<Machine> machines =new ArrayList<>();
@@ -37,6 +38,13 @@ public class Main {
         for (Machine ma: machines){
             ma.turnOn();
             System.out.println(ma);
+            //hvis Radio så news()
+            if (ma instanceof Radio) {
+                ((Radio) ma).news();
+            }
+            else{
+                System.out.println("No News");
+            }
         }
 
     }
